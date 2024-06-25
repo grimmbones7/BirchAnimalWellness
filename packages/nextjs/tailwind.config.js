@@ -2,31 +2,31 @@
 module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "./utils/**/*.{js,ts,jsx,tsx}"],
   plugins: [require("daisyui")],
-  darkTheme: "dark",
-  darkMode: ["selector", "[data-theme='dark']"],
+  darkTheme: "light",
+  darkMode: ["selector", "[data-theme='light']"],
   // DaisyUI theme colors
   daisyui: {
     themes: [
       {
         light: {
-          primary: "#93BBFB",
-          "primary-content": "#212638",
-          secondary: "#DAE8FF",
-          "secondary-content": "#212638",
-          accent: "#93BBFB",
-          "accent-content": "#212638",
-          neutral: "#212638",
-          "neutral-content": "#ffffff",
-          "base-100": "#ffffff",
-          "base-200": "#f4f8ff",
-          "base-300": "#DAE8FF",
-          "base-content": "#212638",
-          info: "#93BBFB",
-          success: "#34EEB6",
-          warning: "#FFCF72",
-          error: "#FF8863",
+          primary: "#b2bea9", // Light Sage Green as primary
+          "primary-content": "#ffffff", // White for primary content
+          secondary: "#8fa88b", // Soft Moss Green as secondary
+          "secondary-content": "#ffffff", // White for secondary content
+          accent: "#a9b99b", // Pale Olive Green as accent
+          "accent-content": "#ffffff", // White for accent content
+          neutral: "#f4f4f4", // Light grey for neutral
+          "neutral-content": "#212638", // Darker text for neutral content
+          "base-100": "#ffffff", // White background
+          "base-200": "#f4f8ff", // Slightly off-white
+          "base-300": "#e3e8ef", // Lighter grey
+          "base-content": "#212638", // Main content color on base
+          info: "#3da9fc", // Light blue for info
+          success: "#34eeb6", // Success color
+          warning: "#ffcf72", // Warning color
+          error: "#ff8863", // Error color
 
-          "--rounded-btn": "9999rem",
+          "--rounded-btn": "9999rem", // Fully rounded buttons
 
           ".tooltip": {
             "--tooltip-tail": "6px",
@@ -39,30 +39,30 @@ module.exports = {
           },
         },
       },
+      // Keep the existing dark theme as is
       {
         dark: {
-          primary: "#212638",
-          "primary-content": "#F9FBFF",
-          secondary: "#323f61",
-          "secondary-content": "#F9FBFF",
-          accent: "#4969A6",
-          "accent-content": "#F9FBFF",
-          neutral: "#F9FBFF",
-          "neutral-content": "#385183",
-          "base-100": "#385183",
-          "base-200": "#2A3655",
-          "base-300": "#212638",
-          "base-content": "#F9FBFF",
-          info: "#385183",
-          success: "#34EEB6",
-          warning: "#FFCF72",
-          error: "#FF8863",
+          primary: "#b2bea9", // Light Sage Green as primary
+          "primary-content": "#ffffff", // White for primary content
+          secondary: "#8fa88b", // Soft Moss Green as secondary
+          "secondary-content": "#ffffff", // White for secondary content
+          accent: "#a9b99b", // Pale Olive Green as accent
+          "accent-content": "#ffffff", // White for accent content
+          neutral: "#f4f4f4", // Light grey for neutral
+          "neutral-content": "#212638", // Darker text for neutral content
+          "base-100": "#ffffff", // White background
+          "base-200": "#f4f8ff", // Slightly off-white
+          "base-300": "#e3e8ef", // Lighter grey
+          "base-content": "#212638", // Main content color on base
+          info: "#3da9fc", // Light blue for info
+          success: "#34eeb6", // Success color
+          warning: "#ffcf72", // Warning color
+          error: "#ff8863", // Error color
 
-          "--rounded-btn": "9999rem",
+          "--rounded-btn": "9999rem", // Fully rounded buttons
 
           ".tooltip": {
             "--tooltip-tail": "6px",
-            "--tooltip-color": "oklch(var(--p))",
           },
           ".link": {
             textUnderlineOffset: "2px",

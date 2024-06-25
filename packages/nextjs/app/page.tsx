@@ -1,69 +1,142 @@
 "use client";
 
-import Link from "next/link";
-import type { NextPage } from "next";
-import { useAccount } from "wagmi";
-import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { Address } from "~~/components/scaffold-eth";
+import { useMemo } from "react";
+import Image from "next/image";
+import { type NextPage } from "next";
+import Slider, { Settings } from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import { Footer } from "~~/components/Footer";
+import GoogleReviewSection from "~~/components/GoogleReviewSection";
+import OwnerSection from "~~/components/OwnerSection";
+import ServiceAreaSection from "~~/components/ServiceAreaSection";
+import TalkSection from "~~/components/TalkSection";
+import TestimonialSection from "~~/components/TestimonialSection";
+import TherapiesOffered from "~~/components/TherapiesOffered";
+import TherapySection from "~~/components/TherapySection";
+
+const images = [
+  {
+    src: "/horse-homepage.jpg",
+    alt: "Picture of a grey horse in a field",
+    text: "Unless the underlying cause is addressed, the indicators will persist.",
+  },
+  {
+    src: "/dog-homepage.jpg",
+    alt: "Fluffy puppy in a field with purple flowers",
+    text: "Natural therapies address bodily ailments, as well as mind and soul ailments",
+  },
+  {
+    src: "/cat-homepage.jpg",
+    alt: "Tabby cat in a field",
+    text: "Natural, holistic therapies are safe and effective methods that allow the body to heal itself.",
+  },
+];
 
 const Home: NextPage = () => {
-  const { address: connectedAddress } = useAccount();
+  // Use useMemo to prevent unnecessary re-renders of the settings object
+  const settings: Settings = useMemo(
+    () => ({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      cssEase: "linear",
+      // nextArrow: <SampleArrow direction="next" />,
+      // prevArrow: <SampleArrow direction="prev" />,
+      fade: true, // Add fade effect
+    }),
+    [],
+  );
 
   return (
     <>
-      <div className="flex items-center flex-col flex-grow pt-10">
-        <div className="px-5">
-          <h1 className="text-center">
-            <span className="block text-2xl mb-2">Welcome to</span>
-            <span className="block text-4xl font-bold">Scaffold-ETH 2</span>
-          </h1>
-          <div className="flex justify-center items-center space-x-2">
-            <p className="my-2 font-medium">Connected Address:</p>
-            <Address address={connectedAddress} />
-          </div>
-          <p className="text-center text-lg">
-            Get started by editing{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/nextjs/app/page.tsx
-            </code>
-          </p>
-          <p className="text-center text-lg">
-            Edit your smart contract{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              YourContract.sol
-            </code>{" "}
-            in{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/hardhat/contracts
-            </code>
-          </p>
-        </div>
-
-        <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
-          <div className="flex justify-center items-center gap-12 flex-col sm:flex-row">
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <BugAntIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Tinker with your smart contract using the{" "}
-                <Link href="/debug" passHref className="link">
-                  Debug Contracts
-                </Link>{" "}
-                tab.
-              </p>
+      <div className="relative w-full h-[80vh]">
+        <Slider {...settings}>
+          {images.map((image, index) => (
+            <div key={image.src} className="relative w-full h-[80vh]">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="100vw"
+                className="object-cover"
+                priority={index === 0} // Prioritize loading of the first image
+              />
+              <div className="absolute inset-0 flex items-center justify-left">
+                <div className="bg-black bg-opacity-20 p-4 md:p-8 rounded-md max-w-[33%] text-center">
+                  <p className="text-white text-xl md:text-4xl opacity-0 animate-fadeIn delay-500">{image.text}</p>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-col bg-base-100 px-10 py-10 text-center items-center max-w-xs rounded-3xl">
-              <MagnifyingGlassIcon className="h-8 w-8 fill-secondary" />
-              <p>
-                Explore your local transactions with the{" "}
-                <Link href="/blockexplorer" passHref className="link">
-                  Block Explorer
-                </Link>{" "}
-                tab.
-              </p>
-            </div>
-          </div>
-        </div>
+          ))}
+        </Slider>
       </div>
+
+      <div className="flex-grow shadow-md bg-gray-200 rounded-lg gap-5">
+        <OwnerSection />
+        <TherapySection />
+      </div>
+      <div className="flex-grow shadow-md bg-gray-200 rounded-lg gap-5 py-5">
+        <TestimonialSection />
+      </div>
+      <div className="flex justify-center items-center shadow-md bg-gray-200 rounded-lg gap-5 py-5">
+        <GoogleReviewSection />
+      </div>
+      <div className="flex justify-center items-center shadow-md bg-gray-200 rounded-lg gap-5 py-5">
+        <TalkSection />
+      </div>
+      <div className="flex justify-center items-center shadow-md bg-gray-200 rounded-lg gap-5 py-5">
+        <TherapiesOffered />
+      </div>
+      <div className="flex justify-center items-center shadow-md bg-gray-200 rounded-lg gap-5 py-5">
+        <ServiceAreaSection />
+      </div>
+      {/* <div className="flex justify-center items-center shadow-md bg-gray-200 rounded-lg gap-5 py-5">
+        <HorseSportsCanadaSection />
+      </div> */}
+      <Footer />
+
+      <style jsx>{`
+        .custom-arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 30px;
+          height: 30px;
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          z-index: 1;
+          cursor: pointer;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .next-arrow {
+          right: 10px;
+        }
+        .prev-arrow {
+          left: 10px;
+        }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 1.5s ease-in-out forwards;
+        }
+        .delay-500 {
+          animation-delay: 0.5s;
+        }
+      `}</style>
     </>
   );
 };
