@@ -6,14 +6,14 @@ import { type NextPage } from "next";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import { Footer } from "~~/components/Footer";
+import GoogleReviewSection from "~~/components/GoogleReviewSection";
 import OwnerSection from "~~/components/OwnerSection";
+import ServiceAreaSection from "~~/components/ServiceAreaSection";
+import TalkSection from "~~/components/TalkSection";
+import TestimonialSection from "~~/components/TestimonialSection";
+import TherapiesOffered from "~~/components/TherapiesOffered";
 import TherapySection from "~~/components/TherapySection";
-
-// const testimonials = [
-//   { id: "EH", image: "/path-to-eh-image.jpg", text: "Testimonial text for E.H." },
-//   { id: "VE", image: "/path-to-ve-image.jpg", text: "Testimonial text for V.E." },
-//   { id: "LV", image: "/path-to-lv-image.jpg", text: "Testimonial text for L.V." },
-// ];
 
 const images = [
   {
@@ -76,10 +76,29 @@ const Home: NextPage = () => {
         </Slider>
       </div>
 
-      <div className="flex-grow bg-base-300 w-full mt-16 px-8 py-12">
+      <div className="flex-grow shadow-md bg-gray-200 rounded-lg gap-5">
         <OwnerSection />
         <TherapySection />
       </div>
+      <div className="flex-grow shadow-md bg-gray-200 rounded-lg gap-5 py-5">
+        <TestimonialSection />
+      </div>
+      <div className="flex justify-center items-center shadow-md bg-gray-200 rounded-lg gap-5 py-5">
+        <GoogleReviewSection />
+      </div>
+      <div className="flex justify-center items-center shadow-md bg-gray-200 rounded-lg gap-5 py-5">
+        <TalkSection />
+      </div>
+      <div className="flex justify-center items-center shadow-md bg-gray-200 rounded-lg gap-5 py-5">
+        <TherapiesOffered />
+      </div>
+      <div className="flex justify-center items-center shadow-md bg-gray-200 rounded-lg gap-5 py-5">
+        <ServiceAreaSection />
+      </div>
+      {/* <div className="flex justify-center items-center shadow-md bg-gray-200 rounded-lg gap-5 py-5">
+        <HorseSportsCanadaSection />
+      </div> */}
+      <Footer />
 
       <style jsx>{`
         .custom-arrow {

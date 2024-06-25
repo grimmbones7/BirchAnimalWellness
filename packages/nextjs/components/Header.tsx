@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-// import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick } from "~~/hooks/scaffold-eth";
 
 type HeaderMenuLink = {
@@ -20,10 +19,6 @@ export const menuLinks: HeaderMenuLink[] = [
     label: "Home",
     href: "/",
   },
-  // {
-  //   label: "Why Me",
-  //   href: "/debug",
-  // },
   {
     label: "Services",
     href: "",
@@ -31,30 +26,15 @@ export const menuLinks: HeaderMenuLink[] = [
       { label: "For your Horse", href: "/horse-services" },
       { label: "For your Dog", href: "/dog-services" },
       { label: "For your Cat", href: "/cat-services" },
-      { label: "For your Other Pets", href: "/service3" },
-      { label: "Common Issues", href: "/service3" },
+      { label: "For your Other Pets", href: "/other-animal-services" },
+      { label: "Common Issues", href: "/common-issues" },
     ],
   },
-  // {
-  //   label: "Learning",
-  //   href: "/debug",
-  // },
-  // {
-  //   label: "Resources",
-  //   href: "/debug",
-  // },
   {
     label: "Contact",
     href: "/contact",
+    submenu: [{ label: "Policies", href: "/policies" }],
   },
-  // {
-  //   label: "Shop",
-  //   href: "/debug",
-  // },
-  // {
-  //   label: "Blog",
-  //   href: "/debug",
-  // },
 ];
 
 const HeaderSubmenu = ({ submenu }: { submenu: HeaderMenuLink[] }) => {
@@ -62,7 +42,7 @@ const HeaderSubmenu = ({ submenu }: { submenu: HeaderMenuLink[] }) => {
     <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md">
       {submenu.map(({ label, href }) => (
         <li key={href}>
-          <Link href={href} passHref className="block px-10 py-2 text-sm hover:bg-gray-100">
+          <Link href={href} passHref className="block px-4 py-2 text-sm hover:bg-gray-100">
             {label}
           </Link>
         </li>
@@ -90,7 +70,7 @@ export const HeaderMenuLinks = () => {
               {icon}
               <span>{label}</span>
             </Link>
-            {submenu && (
+            {submenu && submenu.length > 0 && (
               <div className="hidden group-hover:block">
                 <HeaderSubmenu submenu={submenu} />
               </div>
@@ -102,9 +82,6 @@ export const HeaderMenuLinks = () => {
   );
 };
 
-/**
- * Site header
- */
 export const Header = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const burgerMenuRef = useRef<HTMLDivElement>(null);
@@ -144,17 +121,12 @@ export const Header = () => {
           </div>
           <div className="flex flex-col">
             <span className="font-bold leading-tight">Birch Animal Wellness</span>
-            {/* <span className="text-xs">Ethereum dev stack</span> */}
           </div>
         </Link>
         <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-3">
           <HeaderMenuLinks />
         </ul>
       </div>
-      {/* <div className="navbar-end flex-grow mr-4">
-        <RainbowKitCustomConnectButton />
-        <FaucetButton />
-      </div> */}
     </div>
   );
 };

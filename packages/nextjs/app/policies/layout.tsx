@@ -6,14 +6,14 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const HorseServicesLayout = ({ children }: LayoutProps) => {
+const ContactLayout = ({ children }: LayoutProps) => {
   return (
     <>
-      <main className="container mx-auto py-16">{children}</main>
+      <main>{children}</main>
       <Disclaimer />
       <Footer />
     </>
   );
 };
 
-export default HorseServicesLayout;
+export default ContactLayout;

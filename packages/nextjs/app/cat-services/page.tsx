@@ -2,13 +2,12 @@
 
 /*·eslint-disable·react/no-unescaped-entities·*/
 import Image from "next/image";
+import HeaderOverlay from "~~/components/HeaderOverlay";
 
 export default function CatServices() {
   return (
     <div className="container mx-auto px-4">
-      <div className="bg-primary py-16 mb-8">
-        <h1 className="text-4xl md:text-6xl text-center text-white font-serif">For Your Cat</h1>
-      </div>
+      <HeaderOverlay title="For Your Cat" backgroundImage="/Headerbanner/lightwood.png" />
 
       <div className="space-y-12">
         {/* Iridology Section */}
@@ -94,7 +93,7 @@ export default function CatServices() {
             <div className="md:w-1/2">
               <Image
                 src="/foryourcat/acupressure.png"
-                alt="Canine Acupressure Meridian Chart"
+                alt="Feline Acupressure Meridian Chart"
                 width={600}
                 height={400}
                 className="rounded-lg"
@@ -319,10 +318,10 @@ export default function CatServices() {
               <div>
                 <h3 className="text-lg font-semibold mb-2">Session Information</h3>
                 <p className="mb-2">
-                  This is done over a distance (unless a large group). We offer both 15-minute and 30-minute
+                  This is done over a distance (unless in a large group). We offer both 15-minute and 30-minute
                   communication sessions.
                 </p>
-                <p>Sessions can be conducted via Skype, phone, or I can send you a summary afterwards.</p>
+                <p>Sessions can be conducted via Zoom, phone, or I can send you a summary afterwards.</p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-2">Pricing</h3>

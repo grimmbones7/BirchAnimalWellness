@@ -6,7 +6,7 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const HorseServicesLayout = ({ children }: LayoutProps) => {
+const CommonIssuesLayout = ({ children }: LayoutProps) => {
   return (
     <>
       <main className="container mx-auto py-16">{children}</main>
@@ -16,4 +16,4 @@ const HorseServicesLayout = ({ children }: LayoutProps) => {
   );
 };
 
-export default HorseServicesLayout;
+export default CommonIssuesLayout;

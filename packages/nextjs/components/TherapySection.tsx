@@ -27,32 +27,40 @@ const TherapySection: NextPage = () => {
   ];
 
   return (
-    <div className="flex justify-center items-center py-16">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full px-4">
-        {boxes.map((box, index) => (
-          <div
-            key={index}
-            className="relative w-full h-96 bg-gray-200 rounded-lg overflow-hidden"
-            onMouseEnter={() => setHovered(index)}
-            onMouseLeave={() => setHovered(null)}
-          >
-            <Image src={box.image} alt={`Box ${index + 1}`} layout="fill" objectFit="contain" className="rounded-lg" />
+    <div className="container mx-auto px-16">
+      <div className="flex flex-col  md:flex-row justify-center items-center md:items-start space-y-8 md:space-y-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+          {boxes.map((box, index) => (
             <div
-              className={`absolute inset-0 flex items-center justify-center p-4 transition-opacity duration-300 ${
-                hovered === index ? "bg-black bg-opacity-70" : "bg-black bg-opacity-50"
-              }`}
+              key={index}
+              className="relative w-full h-96 bg-gray-200 rounded-lg overflow-hidden"
+              onMouseEnter={() => setHovered(index)}
+              onMouseLeave={() => setHovered(null)}
             >
-              {hovered === index ? (
-                <a href={box.hoverLink} className="text-white text-center text-xl underline">
-                  {box.hoverText}
-                </a>
-              ) : (
-                <p className="text-white text-center whitespace-pre-line">{box.text}</p>
-              )}
+              <Image
+                src={box.image}
+                alt={`Box ${index + 1}`}
+                layout="fill"
+                objectFit="contain"
+                className="rounded-lg"
+              />
+              <div
+                className={`absolute inset-0 flex items-center justify-center p-4 transition-opacity duration-300 ${
+                  hovered === index ? "bg-black bg-opacity-70" : "bg-black bg-opacity-50"
+                }`}
+              >
+                {hovered === index ? (
+                  <a href={box.hoverLink} className="text-white text-center text-xl underline">
+                    {box.hoverText}
+                  </a>
+                ) : (
+                  <p className="text-white text-center whitespace-pre-line">{box.text}</p>
+                )}
+              </div>
+              <div className="absolute inset-0 border-2 border-white m-4 pointer-events-none"></div>
             </div>
-            <div className="absolute inset-0 border-2 border-white m-4 pointer-events-none"></div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

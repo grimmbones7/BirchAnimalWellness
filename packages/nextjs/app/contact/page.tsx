@@ -15,7 +15,11 @@ const ContactSection = () => {
                 <Clock className="w-6 h-6 mr-2" />
                 Hours of Operation
               </h2>
-              <p>Monday to Friday</p>
+              <p>
+                <b>Stouffville</b>: Wednesdays <br />
+                <br />
+                <b>Lindsay</b>: Mondays & Thursdays
+              </p>
               <p className="text-2xl font-semibold">9am to 5pm</p>
             </div>
           </div>
@@ -41,27 +45,39 @@ const ContactSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
           <div className="md:col-span-2">
             <div className="card bg-base-100 shadow-xl">
-              <figure>
-                <Image
-                  src="/path-to-your-map-image.jpg"
-                  alt="Service Area Map"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto"
-                />
-              </figure>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-3">
+                <div className="bg-white rounded-lg overflow-hidden">
+                  <div className="bg-white p-4 flex justify-center items-center">
+                    <h2 className="text-2xl font-semibold text-center">Lindsay</h2>
+                  </div>
+                  <div className="relative h-64">
+                    <Image src="/Policies/Lindsay.png" alt="Lindsay Service Area Map" layout="fill" objectFit="fill" />
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-lg overflow-hidden">
+                  <div className="bg-white p-4 flex justify-center items-center">
+                    <h2 className="text-2xl font-semibold text-center">Stouffville</h2>
+                  </div>
+                  <div className="relative h-64">
+                    <Image
+                      src="/Policies/Stouffville.png"
+                      alt="Stouffville Service Area Map"
+                      layout="fill"
+                      objectFit="fill"
+                    />
+                  </div>
+                </div>
+              </div>
               <div className="card-body">
                 <h2 className="card-title flex items-center">
                   <MapPin className="w-6 h-6 mr-2" />
                   Location Policy
                 </h2>
-                <p>The circle indicated on this map is a guideline of the area I service for in-person therapies.</p>
-                <p>
-                  If you live more than a <strong>15 minute drive</strong> from me, a proportional gas fee will apply.
-                </p>
+                <p> Base travel fee is $5 + $5 per 10 mins drive</p>
                 <div className="mt-4">
                   <h3 className="font-semibold">Distance therapies available worldwide:</h3>
                   <ul className="list-disc list-inside">
@@ -74,7 +90,8 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div>
+          {/* Waiver Section */}
+          <div className="gap-4">
             <div className="card bg-base-100 shadow-xl">
               <div className="card-body">
                 <h2 className="card-title flex items-center">
@@ -87,6 +104,26 @@ const ContactSection = () => {
                     Download Waiver
                   </a>
                 </div>
+              </div>
+            </div>
+
+            {/* Therapy Policy Section */}
+
+            <div className="mt-10 card bg-base-100 shadow-xl">
+              <div className="card-body">
+                <h2 className="card-title flex items-center">
+                  <FileText className="w-6 h-6 mr-2" />
+                  Therapy Policy
+                </h2>
+                <p>
+                  <b>Not all therapies are available for all species of animal.</b> Please see what is available by
+                  viewing the services page for your species.
+                </p>
+                {/* <div className="card-actions justify-end mt-4">
+                  <a href="/path-to-your-waiver.docx" download className="btn btn-primary">
+                    Download Waiver
+                  </a>
+                </div> */}
               </div>
             </div>
           </div>
