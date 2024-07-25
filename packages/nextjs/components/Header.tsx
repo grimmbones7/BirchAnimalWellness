@@ -20,6 +20,10 @@ export const menuLinks: HeaderMenuLink[] = [
     href: "/",
   },
   {
+    label: "About",
+    href: "/about-me",
+  },
+  {
     label: "Services",
     href: "",
     submenu: [
@@ -28,6 +32,18 @@ export const menuLinks: HeaderMenuLink[] = [
       { label: "For your Cat", href: "/cat-services" },
       { label: "For your Other Pets", href: "/other-animal-services" },
       { label: "Common Issues", href: "/common-issues" },
+    ],
+  },
+
+  {
+    label: "Resources",
+    href: "",
+    submenu: [
+      { label: "Freebies", href: "/Freebies" },
+      { label: "Media", href: "" },
+      { label: "Diet", href: "" },
+      { label: "Books", href: "" },
+      { label: "Hygiene & Safety", href: "" },
     ],
   },
   {
