@@ -10,7 +10,16 @@ const TalkSection: NextPage = () => {
           <div className="md:w-1/3 p-8">
             <h2 className="text-3xl font-semibold mb-4">Want to Host a Talk?</h2>
             <div className="relative w-full h-48 md:h-64">
-              <Image src="/hostatalk.png" alt="A open mic" layout="fill" objectFit="cover" className="rounded-lg" />
+              <Image
+                src="/hostatalk.png"
+                alt="A open mic"
+                fill
+                sizes="(min-width: 808px) 50vw, 100vw"
+                style={{
+                  objectFit: "cover", // cover, contain, none
+                }}
+                className="rounded-lg"
+              />
             </div>
           </div>
           <div className="md:w-2/3 p-8 flex flex-col justify-center">

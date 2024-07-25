@@ -69,7 +69,16 @@ const TherapiesOffered: React.FC = () => {
             { src: "/homepage-speciestherapies/homepage-cattherapies.png", alt: "Cat" },
           ].map((img, index) => (
             <div key={index} className="relative w-1/3 aspect-square">
-              <Image src={img.src} alt={img.alt} layout="fill" objectFit="cover" className="rounded-lg" />
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(min-width: 808px) 50vw, 100vw"
+                style={{
+                  objectFit: "cover", // cover, contain, none
+                }}
+                className="rounded-lg"
+              />
             </div>
           ))}
         </div>
