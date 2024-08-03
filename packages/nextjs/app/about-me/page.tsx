@@ -41,14 +41,64 @@ export default function AboutMePage() {
 
         <div className="grid grid-cols-3 mt-8 flex flex-col justify-between items-center bg-white p-4 rounded-lg shadow">
           <div className="mb-4 sm:mb-0 col-span-2">
-            <h3 className="font-semibold">Session Length:</h3>
-            <p>Approximately 1 hour.</p>
+            <div className="font-sans max-w-2xl mx-auto p-4">
+              <ul className="list-none p-0">
+                <li className="mb-4">
+                  <div className="flex justify-between items-baseline">
+                    <strong className="text-lg font-semibold">Honours Specialization in Animal Behaviour (BSc)</strong>
+                    <span className="text-sm text-gray-600">since 2015</span>
+                  </div>
+                  <em className="text-sm text-gray-700">Western University</em>
+                </li>
+                <li className="mb-4">
+                  <div className="flex justify-between items-baseline">
+                    <strong className="text-lg font-semibold">Equine, Feline, and Canine Iridology Technician</strong>
+                    <span className="text-sm text-gray-600">since 2015</span>
+                  </div>
+                  <em className="text-sm text-gray-700">Through the Eye International (California)</em>
+                </li>
+                <li className="mb-4">
+                  <div className="flex justify-between items-baseline">
+                    <strong className="text-lg font-semibold">Holy Fire/Usui Reiki Master</strong>
+                    <span className="text-sm text-gray-600">since 2016</span>
+                  </div>
+                </li>
+                <li className="mb-4">
+                  <div className="flex justify-between items-baseline">
+                    <strong className="text-lg font-semibold">
+                      NBCAAM Certified Small Animal Acupressure Practitioner
+                    </strong>
+                    <span className="text-sm text-gray-600">since 2018</span>
+                  </div>
+                </li>
+                <li className="mb-4">
+                  <div className="flex justify-between items-baseline">
+                    <strong className="text-lg font-semibold">NBCAAM Certified Equine Acupressure Practitioner</strong>
+                    <span className="text-sm text-gray-600">since 2018</span>
+                  </div>
+                  <em className="text-sm text-gray-700">Tallgrass Animal Acupressure Institute</em>
+                </li>
+                <li className="mb-4">
+                  <div className="flex justify-between items-baseline">
+                    <strong className="text-lg font-semibold">Veterinary Assistant</strong>
+                    <span className="text-sm text-gray-600">since 2019</span>
+                  </div>
+                  <em className="text-sm text-gray-700">Ashworth College</em>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div className="py-2 col-span-1 flex flex-col justify-center items-center">
+          <div className="py-2 col-span-1 flex flex-col justify-center items-center gap-y-5">
             {" "}
-            <Image src="/aboutme/biopic.png" alt="About me" width={100} height={100} className="rounded-lg" />
-            <Image src="/aboutme/biopic.png" alt="About me" width={100} height={100} className="rounded-lg" />
+            <Image src="/about/NBCAAM-logo.png" alt="NBCAAM logo" width={250} height={250} className="rounded-lg" />
+            <Image
+              src="/about/Tallgrass-logo.png"
+              alt="Tallgrass Logo"
+              width={250}
+              height={250}
+              className="rounded-lg"
+            />
           </div>
         </div>
       </div>
