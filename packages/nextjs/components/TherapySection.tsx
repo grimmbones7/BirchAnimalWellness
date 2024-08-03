@@ -40,8 +40,11 @@ const TherapySection: NextPage = () => {
               <Image
                 src={box.image}
                 alt={`Box ${index + 1}`}
-                layout="fill"
-                objectFit="contain"
+                fill
+                sizes="(min-width: 808px) 50vw, 100vw"
+                style={{
+                  objectFit: "cover", // cover, contain, none
+                }}
                 className="rounded-lg"
               />
               <div

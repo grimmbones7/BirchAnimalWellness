@@ -54,7 +54,15 @@ const ContactSection = () => {
                     <h2 className="text-2xl font-semibold text-center">Lindsay</h2>
                   </div>
                   <div className="relative h-64">
-                    <Image src="/Policies/Lindsay.png" alt="Lindsay Service Area Map" layout="fill" objectFit="fill" />
+                    <Image
+                      src="/Policies/Lindsay.png"
+                      alt="Lindsay Service Area Map"
+                      fill
+                      sizes="(min-width: 808px) 50vw, 100vw"
+                      style={{
+                        objectFit: "cover", // cover, contain, none
+                      }}
+                    />
                   </div>
                 </div>
 
@@ -66,8 +74,11 @@ const ContactSection = () => {
                     <Image
                       src="/Policies/Stouffville.png"
                       alt="Stouffville Service Area Map"
-                      layout="fill"
-                      objectFit="fill"
+                      fill
+                      sizes="(min-width: 808px) 50vw, 100vw"
+                      style={{
+                        objectFit: "cover", // cover, contain, none
+                      }}
                     />
                   </div>
                 </div>
