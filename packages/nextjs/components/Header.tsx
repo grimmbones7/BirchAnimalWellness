@@ -30,7 +30,7 @@ export const menuLinks: HeaderMenuLink[] = [
       { label: "For your Horse", href: "/horse-services" },
       { label: "For your Dog", href: "/dog-services" },
       { label: "For your Cat", href: "/cat-services" },
-      { label: "For your Other Pets", href: "/other-animal-services" },
+      { label: "For your Other Animals", href: "/other-animal-services" },
       { label: "Common Issues", href: "/common-issues" },
     ],
   },

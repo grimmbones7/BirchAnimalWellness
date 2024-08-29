@@ -24,21 +24,11 @@ const TalkSection: NextPage = () => {
           </div>
           <div className="md:w-2/3 p-8 flex flex-col justify-center">
             <p className="mb-4">
-              <b>
-                It is very common for pets nowadays to have allergic reactions to toxins in their environment or their
-                food.
-              </b>
+              For those that want to learn more about{" "}
+              <b>complementary wellness therapies, raw pet food, or pet food labels </b> for their animals are welcome
+              to email me to book a talk at their business.
             </p>
-            <p className="mb-4">
-              It can present as anything from sneezing or itching to rashes or hives. Depending on how quickly the
-              symptoms appear, it can be difficult to pinpoint what is causing the reaction. I've seen pets have
-              allergies to everything from grass or pollen to chicken and fish so knowing your pet's environment is key.
-            </p>
-            <p className="mb-4">
-              It's difficult as a pet parent to watch your pet itching constantly or even scratching to the point of
-              bleeding. It breaks your heart because you feel helpless and frustrated. Luckily some allergies are only
-              seasonal and these are also easier to pinpoint.
-            </p>
+            <p> See the Talks & Workshops page for more information about upcoming events</p>
           </div>
         </div>
       </div>

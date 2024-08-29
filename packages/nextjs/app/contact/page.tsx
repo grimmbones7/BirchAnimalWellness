@@ -10,37 +10,52 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="card bg-base-100 shadow-xl">
-            <div className="card-body">
-              <h2 className="card-title flex items-center">
-                <Clock className="w-6 h-6 mr-2" />
+            <div className="card-body p-6 text-center">
+              <h2 className="card-title justify-center text-2xl mb-4">
+                <Clock className="w-8 h-8 mr-3 text-primary" />
                 Hours of Operation
               </h2>
-              <p>
-                <b>Stouffville</b>: Wednesdays <br />
-                <br />
-                <b>Lindsay</b>: Mondays & Thursdays
-              </p>
-              <p className="text-2xl font-semibold">9am to 5pm</p>
+              <div className="space-y-2">
+                <p className="flex items-center justify-center">
+                  <MapPin className="w-5 h-5 mr-2 text-secondary" />
+                  <span>
+                    <b>Stouffville</b>: Wednesdays
+                  </span>
+                </p>
+                <p className="flex items-center justify-center pb-3">
+                  <MapPin className="w-5 h-5 mr-2 text-secondary" />
+                  <span>
+                    <b>Lindsay</b>: Mondays & Thursdays
+                  </span>
+                </p>
+                <p className="text-2xl font-semibold mt-4 flex items-center justify-center">
+                  <Clock className="w-6 h-6 mr-2 text-primary" />
+                  9am to 5pm
+                </p>
+              </div>
             </div>
           </div>
 
           <div className="card bg-base-100 shadow-xl">
-            <div className="card-body">
-              <h2 className="card-title flex items-center">
-                <Mail className="w-6 h-6 mr-2" />
+            <div className="card-body p-6 text-center">
+              <h2 className="card-title justify-center text-2xl mb-4">
+                <Mail className="w-8 h-8 mr-3 text-primary" />
                 Contact Information
               </h2>
-              <p>
-                <a href="mailto:birchanimalwellness@gmail.com" className="link link-primary">
-                  birchanimalwellness@gmail.com
-                </a>
-              </p>
-              <p className="flex items-center mt-2">
-                <Phone className="w-5 h-5 mr-2" />
-                <a href="tel:6474600082" className="link link-primary">
-                  647 460 0082
-                </a>
-              </p>
+              <div className="space-y-3">
+                <p className="flex items-center justify-center">
+                  <Mail className="w-5 h-5 mr-2 text-secondary" />
+                  <a href="mailto:birchanimalwellness@gmail.com" className="link link-primary">
+                    birchanimalwellness@gmail.com
+                  </a>
+                </p>
+                <p className="flex items-center justify-center pt-3">
+                  <Phone className="w-5 h-5 mr-2 text-secondary" />
+                  <a href="tel:6474600082" className="link link-primary">
+                    647 460 0082
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -109,9 +124,13 @@ const ContactSection = () => {
                   <FileText className="w-6 h-6 mr-2" />
                   Waiver
                 </h2>
-                <p>Please print and bring a signed copy to your first appointment</p>
+                <p>Please download and sign the waiver before your first appointment</p>
                 <div className="card-actions justify-end mt-4">
-                  <a href="/path-to-your-waiver.docx" download className="btn btn-primary">
+                  <a
+                    href="/documents/waiver.pdf"
+                    download="Birch_Animal_Wellness_Waiver.pdf"
+                    className="btn btn-primary"
+                  >
                     Download Waiver
                   </a>
                 </div>

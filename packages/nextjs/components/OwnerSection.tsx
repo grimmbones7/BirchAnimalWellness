@@ -68,7 +68,7 @@ const OwnerSection: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-16">
+    <div className="container mx-auto p-8 md:p-16">
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index}>
@@ -76,15 +76,17 @@ const OwnerSection: React.FC = () => {
               <div className="md:w-1/2 relative h-64 md:h-[400px]">
                 <Image src={slide.src} alt={slide.alt} fill className="object-cover" />
               </div>
-              <div className="md:w-1/2 p-8 bg-white bg-opacity-70 backdrop-blur-sm">
-                <h2 className="text-3xl font-bold mb-4 text-gray-900">{slide.title}</h2>
-                <p className="text-gray-800 mb-6">{slide.text}</p>
+              <div className="md:w-1/2 p-8 flex flex-col justify-between bg-white bg-opacity-70 backdrop-blur-sm mx-2">
+                <div>
+                  <h2 className="text-3xl font-bold mb-4 text-gray-900">{slide.title}</h2>
+                  <p className="text-gray-800 mb-6 leading-relaxed">{slide.text}</p>
+                </div>
                 <Link
                   href={slide.link}
-                  className="inline-flex items-center text-gray-900 font-semibold hover:text-gray-700 border border-gray-300 px-4 py-2 rounded"
+                  className="inline-flex items-center text-gray-900 font-semibold hover:text-gray-700 border border-gray-300 px-4 py-2 rounded self-start"
                 >
                   {slide.linkText}
-                  <ChevronRight className="mr-2 h-4 w-4" />
+                  <ChevronRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
             </div>

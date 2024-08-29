@@ -30,8 +30,8 @@ const PolicySection: React.FC = () => {
             <p>
               We accept various payment methods including cash, cheque, and e-transfers.{" "}
               <b>Full payment is due at the time of service. </b> <br /> <br />
-              For international payments, please use PayPal to birchanimalwellness@gmail.com. A $5 fee will apply for
-              international payments.
+              For international payments, please use PayPal to <b>birchanimalwellness@gmail.com</b>. A $5 fee will apply
+              for international payments.
             </p>
           </PolicyCard>
 
@@ -41,7 +41,6 @@ const PolicySection: React.FC = () => {
               cancellations. Late cancellations or no-shows are be subject to a <b>25% value of your appointment</b>{" "}
               plus travel fees for in-person appointments.
             </p>
-            .
           </PolicyCard>
 
           <PolicyCard title="Travel Fee Policy" icon={<MapPin className="w-6 h-6" />}>
