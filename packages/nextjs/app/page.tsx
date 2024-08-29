@@ -67,8 +67,10 @@ const Home: NextPage = () => {
                 priority={index === 0} // Prioritize loading of the first image
               />
               <div className="absolute inset-0 flex items-center justify-left">
-                <div className="bg-black bg-opacity-20 p-4 md:p-8 rounded-md max-w-[33%] text-center">
-                  <p className="text-white text-xl md:text-4xl opacity-0 animate-fadeIn delay-500">{image.text}</p>
+                <div className="bg-black bg-opacity-10 p-4 md:p-8 rounded-md max-w-[40%] text-center">
+                  <p className="text-white text-lg md:text-3xl font-light opacity-0 animate-fadeIn delay-500">
+                    {image.text}
+                  </p>
                 </div>
               </div>
             </div>

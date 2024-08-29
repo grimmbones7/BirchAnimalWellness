@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import type { NextPage } from "next";
 
 const TherapySection: NextPage = () => {
@@ -10,58 +11,57 @@ const TherapySection: NextPage = () => {
       image: "/homepage-speciestherapies/homepage-dogtherapies.png",
       text: "ANXIOUS?\nJOINT PAIN?\nPOOR DIGESTION?\nHYPERACTIVE?",
       hoverText: "Therapies for Dogs",
-      hoverLink: "#dog-therapies", // Placeholder link
+      hoverLink: "/dog-services",
     },
     {
       image: "/homepage-speciestherapies/homepage-cattherapies.png",
       text: "KIDNEY STONES?\nDRY COAT?\nSTIFFNESS?\nNOT EATING?",
       hoverText: "Therapies for Cats",
-      hoverLink: "#cat-therapies", // Placeholder link
+      hoverLink: "/cat-services",
     },
     {
       image: "/homepage-speciestherapies/homepage-horsetherapies.png",
       text: "SPOOKY?\nSTUBBORN?\nMUSCLE PAIN?\nCRIBBING?\nARTHRITIS?",
       hoverText: "Therapies for Horses",
-      hoverLink: "/horseservices", // Placeholder link
+      hoverLink: "/horse-services",
     },
   ];
 
   return (
     <div className="container mx-auto px-16">
-      <div className="flex flex-col  md:flex-row justify-center items-center md:items-start space-y-8 md:space-y-0">
+      <div className="flex flex-col md:flex-row justify-center items-center md:items-start space-y-8 md:space-y-0">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
           {boxes.map((box, index) => (
-            <div
-              key={index}
-              className="relative w-full h-96 bg-gray-200 rounded-lg overflow-hidden"
-              onMouseEnter={() => setHovered(index)}
-              onMouseLeave={() => setHovered(null)}
-            >
-              <Image
-                src={box.image}
-                alt={`Box ${index + 1}`}
-                fill
-                sizes="(min-width: 808px) 50vw, 100vw"
-                style={{
-                  objectFit: "cover", // cover, contain, none
-                }}
-                className="rounded-lg"
-              />
+            <Link href={box.hoverLink} key={index}>
               <div
-                className={`absolute inset-0 flex items-center justify-center p-4 transition-opacity duration-300 ${
-                  hovered === index ? "bg-black bg-opacity-70" : "bg-black bg-opacity-50"
-                }`}
+                className="relative w-full h-96 bg-gray-200 rounded-lg overflow-hidden cursor-pointer"
+                onMouseEnter={() => setHovered(index)}
+                onMouseLeave={() => setHovered(null)}
               >
-                {hovered === index ? (
-                  <a href={box.hoverLink} className="text-white text-center text-xl underline">
-                    {box.hoverText}
-                  </a>
-                ) : (
-                  <p className="text-white text-center whitespace-pre-line">{box.text}</p>
-                )}
+                <Image
+                  src={box.image}
+                  alt={`Box ${index + 1}`}
+                  fill
+                  sizes="(min-width: 808px) 50vw, 100vw"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                  className="rounded-lg"
+                />
+                <div
+                  className={`absolute inset-0 flex items-center justify-center p-4 transition-opacity duration-300 ${
+                    hovered === index ? "bg-black bg-opacity-70" : "bg-black bg-opacity-50"
+                  }`}
+                >
+                  {hovered === index ? (
+                    <span className="text-white text-center text-xl underline">{box.hoverText}</span>
+                  ) : (
+                    <p className="text-white text-center whitespace-pre-line">{box.text}</p>
+                  )}
+                </div>
+                <div className="absolute inset-0 border-2 border-white m-4 pointer-events-none"></div>
               </div>
-              <div className="absolute inset-0 border-2 border-white m-4 pointer-events-none"></div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
